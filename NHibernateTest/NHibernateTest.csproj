@@ -72,6 +72,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Cat.hbm.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Owner.hbm.xml" />
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

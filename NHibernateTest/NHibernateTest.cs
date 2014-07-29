@@ -17,8 +17,10 @@ namespace NHibernateTest
             {
                 using (ITransaction transaction = session.BeginTransaction())
                 {
-                    var princess = new Cat {Name = "Princess", Sex = 'F', Weight = new Random(10).Next() / 1.0f};
-                    session.Save(princess);
+                    var owner = new Owner { Name = "Bitch" };
+                    var cat = new Cat {Name = "Princess", Sex = 'F', Weight = new Random(10).Next()/1.0f, Owner = owner};
+                    session.Save(owner);
+                    session.Save(cat);
                     transaction.Commit();
                 }
             }
