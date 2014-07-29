@@ -2,7 +2,6 @@
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NHibernate;
-using NHibernate.Cfg;
 using NHibernate.Linq;
 
 namespace NHibernateTest
