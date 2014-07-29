@@ -23,6 +23,6 @@ namespace NHibernateTest
 
         public virtual string Name { get; set; }
 
-        public virtual List<Cat> Cats { get; set; }
+        public virtual Iesi.Collections.Generic.ISet<Cat> Cats { get; set; }
     }
 }
