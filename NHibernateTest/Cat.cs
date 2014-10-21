@@ -10,7 +10,7 @@ namespace NHibernateTest
 
         public virtual char Sex { get; set; }
 
-        public virtual float Weight { get; set; }
+        public virtual decimal Weight { get; set; }
 
         public virtual string OwnerId { get; set; }
 

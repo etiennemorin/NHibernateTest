@@ -32,7 +32,7 @@ namespace NHibernateTest
                 using (ITransaction transaction = session.BeginTransaction())
                 {
                     var owner = new Owner { Name = "Yuppy" };
-                    var cat = new Cat {Name = "Fat", Sex = 'F', Weight = new Random().Next(1, 10)/1.0f, Owner = owner};
+                    var cat = new Cat {Name = "Fat", Sex = 'F', Weight = new Random().Next(1, 10)/1.0m, Owner = owner};
                     session.Save(owner);
                     session.Save(cat);
                     transaction.Commit();
@@ -47,6 +47,24 @@ namespace NHibernateTest
             {
                 var cats = session.Query<Cat>().ToList();
                 Assert.IsTrue(cats.Count > 0);
+            }
+        }
+
+
+        [TestMethod]
+        public void UpdateCats()
+        {
+            using (ISession session = NHibernateSession.OpenSession())
+            {
+                var cats = session.Query<Cat>().ToList();
+                Assert.IsTrue(cats.Count > 0);
+
+                var cat = cats.First();
+
+                cat.Weight += 10;
+                
+                session.SaveOrUpdate(cat);
+                session.Flush();
             }
         }
 
